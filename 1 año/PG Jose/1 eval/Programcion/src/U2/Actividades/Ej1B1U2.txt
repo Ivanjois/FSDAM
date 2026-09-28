@@ -1,0 +1,12 @@
+Algoritmo CoversorPulgadaCm
+CONST
+Decimales pulgada = 2.54
+Texto medidadPulgada= "cm"
+VAR
+pulgadas = 0
+cm = 0
+INICIO
+ESCRIBIR ("Introduce las pulgadas que quieres convertir(decimales con ,)")
+LEER (pulgadas)
+cm = pulgadas*pulgada
+ESCRIBIR ("Las pulgas "+pulgadas+"en cm es "+cm+medidaPulgadas+".")

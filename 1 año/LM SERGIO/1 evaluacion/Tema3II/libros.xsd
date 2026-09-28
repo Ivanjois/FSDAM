@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ivan Poyda -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Tipos simples -->
+    <xs:simpleType name="tipoNivel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Básico"/>
+            <xs:enumeration value="Intermedio"/>
+            <xs:enumeration value="Avanzado"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="euro"/>
+            <xs:enumeration value="dólar"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoISBN">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}-\d{3}-\d{2}-\d{4}-\d{1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipo para precios -->
+    <xs:simpleType name="tipoPrecio">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Estructura principal -->
+    <xs:element name="libros">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libreria" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="libro" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ISBN" type="tipoISBN"/>
+                                        <xs:element name="titulo" type="xs:string"/>
+                                        <xs:element name="nivel" type="tipoNivel"/>
+                                        <xs:element name="autor" type="xs:string"/>
+                                        <xs:element name="editorial" type="xs:string"/>
+                                        <xs:element name="fecha_publicacion" type="xs:date"/>
+                                        <xs:element name="web" type="xs:anyURI"/>
+
+                                        <xs:element name="precio">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="tipoPrecio">
+                                                        <xs:attribute name="moneda" type="tipoMoneda" use="required"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

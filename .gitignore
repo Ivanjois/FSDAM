@@ -1,0 +1,42 @@
+# Compilados y binarios
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Gradle
+.gradle/
+build/
+bin/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# IntelliJ IDEA / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+
+# Sistema y logs
+*.log
+.DS_Store
+Thumbs.db
+
+# Ficheros temporales y backups
+*~
+*.swp
+*.bak

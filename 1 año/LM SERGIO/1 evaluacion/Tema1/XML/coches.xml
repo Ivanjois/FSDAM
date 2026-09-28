@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<oferta>
+    <vehiculo>
+        <marca>ford</marca>
+        <modelo>focus</modelo>
+        <motor combustible="gasolina">duratorc 1.4</motor>
+        <matricula>1234FDS</matricula>
+        <kilometros>12500</kilometros>
+        <precio_original>12000</precio_original>
+        <precio_oferta>10000</precio_oferta>
+        <extra valor="200">pintura especial</extra>
+        <extra valor="300">llantas</extra>
+        <foto>11326.jpg</foto>
+    </vehiculo>
+    <vehiculo>
+        <marca>ford</marca>
+        <modelo>focus</modelo>
+        <motor combustible="diesel">duratorc 2.0</motor>
+        <matricula>5678MNC</matricula>
+        <kilometros>125000</kilometros>
+        <precio_original>12000</precio_original>
+        <precio_oferta>9000</precio_oferta>
+        <extra valor="200">pintura metalizada</extra>
+        <extra valor="200">spoiler trasero</extra>
+        <foto>11327.jpg</foto>
+    </vehiculo>
+</oferta>

@@ -1,0 +1,92 @@
+/* =========================================
+   1. RESET DE MODELO DE CAJA (La base)
+   ========================================= */
+/* Selector Universal (*): Apunta a TODAS las etiquetas del HTML */
+* {
+  margin: 0; /* Quita el margen que traen los navegadores por defecto */
+  padding: 0; /* Quita el relleno por defecto */
+  box-sizing: border-box; /* Obliga a que los bordes no agranden el tamaño de las cajas */
+}
+
+/* =========================================
+   2. ESTILOS GENERALES (El Cuerpo)
+   ========================================= */
+/* Selector de Etiqueta: Apunta a todo el <body> */
+body {
+  font-family: Arial, sans-serif; /* Tipo de letra */
+  background-color: #f4f4f4; /* Un fondo gris clarito */
+  color: #333333; /* Color del texto gris oscuro */
+  line-height: 1.6; /* Interlineado para que se lea mejor */
+  padding: 0 5vw; /* UNIDAD DINÁMICA: Deja un margen a los lados del 5% del ancho de la pantalla (vw) */
+}
+
+/* =========================================
+   3. LA CABECERA (Usando Flexbox)
+   ========================================= */
+header {
+  background-color: #003d82; /* Fondo azul oscuro */
+  color: white; /* Letra blanca */
+  padding: 2rem; /* UNIDAD DINÁMICA: Relleno basado en el tamaño de la letra (rem) */
+  margin-bottom: 2rem; /* Separa la cabecera del resto de la web */
+
+  /* FLEXBOX: Centramos el título fácilmente */
+  display: flex;
+  justify-content: center; /* Lo centra en horizontal */
+  align-items: center; /* Lo centra en vertical */
+}
+
+/* Selector de Etiqueta (h1, h2, p) */
+h1 {
+  font-size: 2.5rem; /* Letra grande y dinámica */
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #003d82; /* Título en azul */
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   4. EL PIE DE PÁGINA (Footer)
+   ========================================= */
+footer {
+  background-color: #222222; /* Fondo casi negro */
+  color: white;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 1rem 1rem 0 0; /* Redondea solo las esquinas de arriba */
+}
+
+/* Estilo para la lista que pusimos en el footer */
+footer ol {
+  display: flex; /* FLEXBOX: Ponemos los elementos de la lista en fila */
+  gap: 2rem; /* EL FAMOSO GAP: Deja un "pasillo" de 2rem entre los elementos de la lista */
+  list-style: none; /* Quita los números (1, 2...) de la lista */
+  justify-content: center; /* Centra la lista en el medio del footer */
+}
+
+/* =========================================
+   5. DISEÑO RESPONSIVE (La Media Query)
+   ========================================= */
+/* MEDIA QUERY: "Oye navegador, si la pantalla mide 768px o menos (móvil), cambia estas reglas" */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 1.8rem; /* Hacemos el título principal más pequeño para que quepa en el móvil */
+  }
+
+  footer ol {
+    flex-direction: column; /* Cambiamos la lista de fila a columna (uno encima de otro) */
+    align-items: center; /* Los centramos */
+    gap: 1rem; /* Reducimos el pasillo porque ahora están apilados */
+  }
+
+  body {
+    padding: 0 2vw; /* Hacemos el margen lateral más pequeño para aprovechar la pantallita del móvil */
+  }
+}

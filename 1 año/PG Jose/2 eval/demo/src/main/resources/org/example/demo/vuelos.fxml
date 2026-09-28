@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.demo.controller.VueloController"
+      prefWidth="600" prefHeight="700">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <TableView fx:id="tablaVuelos" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="colNumero" text="Flight Number" prefWidth="120"/>
+            <TableColumn fx:id="colDestino" text="Destination" prefWidth="150"/>
+            <TableColumn fx:id="colFecha" text="Departure" prefWidth="150"/>
+            <TableColumn fx:id="colDuracion" text="Duration" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label text="Flight"/>
+    <TextField fx:id="txtNumero" promptText="Flight number"/>
+
+    <Label text="Destination"/>
+    <TextField fx:id="txtDestino" promptText="Destination"/>
+
+    <Label text="Date"/>
+    <DatePicker fx:id="dpFecha" promptText="01/01/2026" prefWidth="200"/>
+
+    <Label text="Duration"/>
+    <TextField fx:id="txtDuracion" promptText="Minutes"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Add flight" onAction="#addFlightAction" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Delete" onAction="#deleteFlightAction" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Refresh flights" onAction="#refreshAction"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <VBox.margin>
+            <Insets top="15"/>
+        </VBox.margin>
+        <ComboBox fx:id="comboFiltros" promptText="Select filter" prefWidth="250"/>
+        <Button text="Apply filter" onAction="#applyFilterAction" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+</VBox>

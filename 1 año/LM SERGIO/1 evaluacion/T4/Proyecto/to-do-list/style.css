@@ -1,0 +1,30 @@
+/* Separamos un poco cada tarea y los botones */
+li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+button {
+  margin-left: 20px;
+}
+body {
+  /* 1. Encendemos Flexbox */
+  display: flex;
+
+  /* 2. Centramos en el eje horizontal (Izquierda a Derecha) */
+  justify-content: center;
+
+  /* 3. Centramos en el eje vertical (Arriba a Abajo) */
+  align-items: center;
+
+  /* 4. ¡SÚPER IMPORTANTE! Le decimos que el body ocupe toda la altura de la pantalla */
+  height: 100vh;
+}
+h2{
+  margin: 10px;
+}
+/* Esta clase es la que tacha el texto cuando la marcamos */
+.hecha {
+  text-decoration: line-through;
+  color: gray;
+}

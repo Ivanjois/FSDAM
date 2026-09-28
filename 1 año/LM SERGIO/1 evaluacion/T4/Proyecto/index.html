@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciclo de Vida del Software</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+  <div class="container header-content">
+    <h1>Software</h1>
+    <button id="btn-tema" class="btn-tema">🌙 Modo Oscuro</button>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="Introducción.html">Introducción</a></li>
+        <li><a href="Pagina1.html">Análisis</a></li>
+        <li><a href="Pagina2.html">Diseño</a></li>
+        <li><a href="Pagina3.html">Implementación</a></li>
+        <li><a href="Pagina4.html">Pruebas</a></li>
+        <li><a href="Pagina5.html">Mantenimiento</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section><h2 id="titulo-principal">Introducción al Proyecto</h2>
+    <article>
+      <p> Este sitio web presenta un desglose detallado de las etapas fundamentales en el desarrollo de software. El
+        ciclo de vida del software es un proceso estructurado que garantiza la calidad y eficiencia en la creación de
+        programas informáticos.
+      </p>
+      <picture>
+        <source media="(max-width: 768px)" srcset="Ciclo_del_software.png">
+        <img src="Ciclo_del_software.png" alt="Diagrama general del ciclo de vida"
+             class="imagen-destacada">
+      </picture>
+    </article>
+  </section>
+  <section id="fases" class="seccion-scroll-tarjetas">
+
+    <div class="contenedor-pegajoso-tarjetas">
+      <h2>Resumen de las Fases</h2>
+
+      <div class="fases-stack">
+        <article class="fase-card activa">
+          <h3>1. Análisis</h3>
+          <p>Definición de los requisitos y necesidades del cliente.</p>
+        </article>
+
+        <article class="fase-card">
+          <h3>2. Diseño</h3>
+          <p>Planificación de la arquitectura y componentes del sistema.</p>
+        </article>
+
+        <article class="fase-card">
+          <h3>3. Implementación</h3>
+          <p>Codificación y construcción de software.</p>
+        </article>
+
+        <article class="fase-card">
+          <h3>4. Pruebas</h3>
+          <p>Verificación y validación para encontrar errores.</p>
+        </article>
+
+        <article class="fase-card">
+          <h3>5. Mantenimiento</h3>
+          <p>Actualizaciones y correcciones post-lanzamiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content navigation-buttons">
+    <a href="Introducción.html" class="nav-button">Siguiente »</a>
+    <p>© 2025 - Ciclo de Vida del Software</p></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

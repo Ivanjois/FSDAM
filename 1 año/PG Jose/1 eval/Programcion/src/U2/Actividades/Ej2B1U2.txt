@@ -1,0 +1,8 @@
+Algoritmo ) La Potencia Cúbica
+VAR
+DECIMALES numero, cubo.
+INICIO
+ESCRIBIR ("Introduce un numero para calcular su cubo")
+LEER (numero)
+cubo= numero*numero*numero
+ESCRIBIR ("Tu numero"+numero+"al cubo es"+cubo)

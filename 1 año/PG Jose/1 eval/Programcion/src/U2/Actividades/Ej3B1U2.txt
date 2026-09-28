@@ -1,0 +1,13 @@
+Algoritmo Geometría del Cilindro
+CONST
+PI = 3,14
+VAR
+DECIMALES radio, altura, volumen, area.
+INICIO
+ESCRIBIR ("Introduce el valor del radio")
+LEER (radio)
+ESCRIBIR ("Introduce el valor del altura")
+LEER (altura)
+volumen = PI * (radio*radio)*altura
+area = 2 * PI * radio * altura * 2 * PI * (radio*radio) 
+ESCRIBIR ("El volumen sera de " +volumen+" y el area sera de "+area)

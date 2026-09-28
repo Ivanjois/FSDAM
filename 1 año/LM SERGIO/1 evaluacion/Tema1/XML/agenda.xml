@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda SYSTEM "agenda.dtd">
+<agenda>
+    <nombre_completo>
+        <nombre>Pepe</nombre>
+        <apellido1>Gonzalez</apellido1>
+        <apellido2>Ribera</apellido2>
+    </nombre_completo>
+    <apodo>
+        Pepito Grillo
+    </apodo>
+</agenda>

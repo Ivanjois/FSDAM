@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plataforma nombre="Netflix">
+    <series>
+        <serie titulo="Stranger Things">
+            <temporada numero="1">
+                <episodio numero="1">
+                    <titulo>La desaparición de Bill Byers</titulo>
+                </episodio>
+                <episodio numero="2">
+                    <titulo>La loca de la calle Maple</titulo>
+                </episodio>
+            </temporada>
+        </serie>
+        <serie>
+        </serie>
+    </series>
+</plataforma>

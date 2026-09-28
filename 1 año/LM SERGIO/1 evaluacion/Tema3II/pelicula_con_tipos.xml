@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ivan Poyda-->
+<pelicula
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation ="pelicula_con_tipos.xsd"
+                estreno="1999" minutos="120">
+    <titulo genero="Drama">Pacman</titulo>
+    <director>Braun</director>
+    <valoracion nota="8"/>
+    <reparto>
+        <interprete>Capracio Socer</interprete>
+        <interprete>Felipe Stechess</interprete>
+        <interprete>Bisel Sail</interprete>
+    </reparto>
+</pelicula>

@@ -1,0 +1,10 @@
+Algoritmo El Teorema de Pitágoras
+VAR
+DECIMALES cateto1, cateto2, hipotenusa.
+INICIO
+ESCRIBIR ("Introduce el valor del cateto1")
+LEER (cateto1)
+ESCRIBIR ("Introduce el valor del cateto2")
+LEER (cateto2)
+hipotenusa^2 = cateto1^2 + cateto2^2  
+ESCRIBIR ("El de la hipotenusa sera de " +hipotenusa+".")

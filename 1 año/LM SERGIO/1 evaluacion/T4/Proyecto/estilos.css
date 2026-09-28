@@ -1,0 +1,355 @@
+/* =========================================
+   ESTILOS CSS: CICLO DE VIDA DEL SOFTWARE
+   ========================================= */
+
+/* --- 1. RESET Y VARIABLES GLOBALES --- */
+* { /* Selecciona todos los elementos de la página */
+  margin: 0; /* Elimina márgenes externos por defecto */
+  padding: 0; /* Elimina márgenes internos por defecto */
+  box-sizing: border-box; /* Asegura que el padding y los bordes no aumenten el tamaño total definido de un elemento */
+}
+
+:root { /* Define variables globales accesibles desde cualquier parte del CSS */
+  --color-primario: rgba(5, 9, 14, 0.97); /* Tono muy oscuro, casi negro, para elementos principales */
+  --color-secundario: #f4f4f4; /* Gris muy claro para fondos secundarios */
+  --color-enlace: rgba(100, 114, 138, 0.45); /* Azul/grisáceo translúcido para fondo de botones/enlaces */
+  --color-hover: #003d82; /* Azul oscuro para interacciones (pasar el ratón) */
+  --color-blanco: #ffffff; /* Blanco puro */
+  --color-texto-negro: rgba(0, 0, 0, 0.95); /* Negro casi puro para el texto principal */
+  --color-texto-footer: #aaa; /* Gris claro para el texto del pie de página */
+  --color-sombra-suave: rgba(0, 0, 0, 0.1); /* Sombra negra muy ligera (10% opacidad) */
+  --color-sombra-fuerte: rgba(0, 0, 0, 0.2); /* Sombra negra un poco más marcada (20% opacidad) */
+  --color-fondo-footer: #222; /* Gris muy oscuro para el fondo del footer */
+
+  --color-fondo-cajas: #ffffff; /* Fondo blanco para tarjetas y contenedores */
+  --color-fondo-header: rgba(255, 255, 255, 0.98); /* Blanco con 85% de opacidad para efecto cristal más legible */
+  --color-borde: rgba(0, 0, 0, 0.05); /* Borde sutil, casi invisible */
+  --color-titulo-tarjeta: rgba(0, 0, 0, 0.9);
+
+  --globalmessage-segment-background: rgb(250, 250, 252); /* Fondo principal de la página (casi blanco) */
+  --globalmessage-segment-text-color: rgba(0, 0, 0, 0.9); /* Color de texto base general */
+}
+
+/* --- 2. TIPOGRAFÍA Y ETIQUETAS BASE --- */
+body {
+  width: 100%;/* Estilos que heredarán todos los elementos de la web */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuentes nativas del sistema operativo (rápidas y limpias) */
+  color: var(--globalmessage-segment-text-color); /* Usa la variable de color de texto */
+  line-height: 1.5; /* Altura de línea del 150% para facilitar la lectura */
+  background-color: var(--globalmessage-segment-background); /* Aplica el fondo base de la página */
+  overflow-x: hidden; /* Evita que aparezca una barra de scroll horizontal si algo se sale por los lados */
+}
+
+h2 { /* Estilos para títulos secundarios */
+  font-size: 2.2rem; /* Tamaño grande relativo a la fuente base */
+  margin-bottom: 2.5rem; /* Separación amplia por debajo del título */
+  text-align: center; /* Centra el texto */
+  letter-spacing: -0.05rem; /* Junta ligeramente las letras para un look más moderno */
+}
+
+h3 { /* Estilos para títulos de tercer nivel (ej: dentro de tarjetas) */
+  font-size: 1.3rem; /* Tamaño medio */
+  margin-bottom: 0.8rem; /* Pequeña separación inferior */
+}
+
+p { /* Estilos para los párrafos de texto estándar */
+  margin-bottom: 1.5rem; /* Espacio entre párrafos */
+  font-size: 1.15rem; /* Tamaño de letra ligeramente ampliado para leer mejor */
+  color: var(--globalmessage-segment-text-color); /* Usa la variable de color de texto */
+  line-height: 1.6; /* Interlineado del 160% (un pelín más amplio que el del body) */
+}
+
+/* --- 3. ESTRUCTURA Y CONTENEDORES --- */
+.container { /* Clase para envolver y centrar contenido limitando su ancho */
+  max-width: 64rem; /* Ancho máximo (unos 1024px), evita líneas de texto infinitas en monitores grandes */
+  margin: 0 auto; /* Centra la caja en medio de la pantalla */
+  padding: 0 4vw; /* Márgenes internos dinámicos a los lados (4% del ancho de la pantalla) */
+}
+
+main { /* Etiqueta que envuelve el contenido principal */
+  padding: 5rem 0 3rem 0; /* Relleno superior de 5rem (separa del menú), inferior de 3rem */
+}
+
+section { /* Bloques semánticos de contenido */
+  margin-bottom: 5rem; /* Gran separación entre diferentes secciones de la web */
+}
+
+/* --- 4. CABECERA Y NAVEGACIÓN --- */
+header { /* Estilo del menú superior */
+  width: 100%;
+  background: var(--color-fondo-header); /* Usa el fondo translúcido blanco */
+  border-bottom: 0.1rem solid var(--color-borde); /* Línea inferior sutil */
+  padding: 1rem 0; /* Relleno superior e inferior */
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.05); /* Sombra difuminada debajo de la cabecera */
+  position: sticky; /* Hace que se quede pegado en la parte superior al hacer scroll */
+  top: 0; /* Le indica que se pegue exactamente arriba (a 0 px del borde) */
+  z-index: 1000; /* Asegura que la cabecera siempre esté por encima del resto del contenido */
+  border-radius: 0 0 1rem 1rem; /* Redondea solo las esquinas inferiores */
+}
+
+.header-content { /* Contenedor interno del header */
+  display: flex; /* Permite colocar título y menú en la misma fila */
+  justify-content: space-between; /* Empuja el título a la izquierda y el menú a la derecha */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  flex-wrap: wrap; /* Si no caben en una línea (pantallas pequeñas), bajan a la siguiente */
+  padding: 0 2vw; /* Relleno lateral */
+}
+
+header h1 { /* Título del sitio dentro de la cabecera */
+  font-size: 1.6rem; /* Tamaño destacado */
+  font-weight: 700; /* Letra negrita gruesa */
+}
+
+#titulo-principal { /* Selecciona el elemento específico con este ID */
+  text-transform: uppercase; /* Convierte el texto automáticamente a MAYÚSCULAS */
+  letter-spacing: 0.1rem; /* Separa un poco los caracteres */
+}
+
+/* Botón del Tema (Luna/Sol) */
+.btn-tema { /* Botón para cambiar a modo oscuro */
+  background-color: var(--color-primario); /* Fondo oscuro por defecto */
+  color: var(--color-blanco); /* Icono o texto en blanco */
+  border: none; /* Quita el borde por defecto */
+  padding: 0.5rem 1rem; /* Relleno interno para darle forma */
+  border-radius: 50rem; /* Forma de píldora */
+  cursor: pointer; /* Cambia el cursor a la "manito" interactiva */
+  font-weight: bold; /* Texto en negrita */
+  transition: all 0.3s ease; /* Transición suave al pasar el ratón (hover) */
+  margin-right: 1rem; /* Lo separa del menú de navegación a su derecha */
+}
+
+.btn-tema:hover { /* Al pasar el ratón por encima del botón de tema */
+  transform: scale(1.05); /* Crece un 5% */
+  background-color: var(--color-hover); /* Cambia al azul oscuro */
+}
+
+nav ul { /* Lista de enlaces del menú */
+  list-style: none; /* Quita los puntos/viñetas de las listas */
+  display: flex; /* Coloca los enlaces uno al lado del otro */
+  flex-wrap: wrap; /* Permite saltos de línea si falta espacio */
+  align-items: center; /* Centra los botones verticalmente */
+  gap: 0.8rem; /* Espaciado uniforme entre cada botón del menú */
+}
+
+nav ul li a { /* Estilos de los enlaces (botones) del menú */
+  text-decoration: none; /* Quita la línea de subrayado típica de los enlaces */
+  color: var(--color-texto-negro); /* Color del texto */
+  background-color: var(--color-enlace); /* Fondo base del botón */
+  font-weight: 600; /* Grosor de la fuente (semi-negrita) */
+  font-size: 0.85rem; /* Tamaño de texto ligeramente pequeño */
+  padding: 0.5rem 1.2rem; /* Relleno para dar forma de botón */
+  border-radius: 50rem; /* Esquinas muy redondeadas (píldoras) */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación fluida personalizada para cambios de estado */
+  display: inline-block; /* Comportamiento de bloque para respetar márgenes y rellenos */
+}
+
+nav ul li a.active, /* Selecciona la página actual (activa) */
+nav ul li a:hover { /* Y también al pasar el ratón por cualquier enlace */
+  background-color: var(--color-hover); /* Fondo azul destacado */
+  color: var(--color-blanco); /* Texto blanco */
+  transform: scale(1.05); /* Efecto de crecimiento (zoom) */
+  box-shadow: 0 0.25rem 0.8rem var(--color-sombra-fuerte); /* Agrega sombra brillante/marcada */
+}
+
+/* --- 5. IMÁGENES Y VÍDEOS --- */
+.imagen-destacada { /* Clase para imágenes de la página */
+  width: 90%; /* Ocupa el 90% de su contenedor padre */
+  max-width: 100%; /* Medida de seguridad: nunca rebasa el contenedor */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  display: block; /* Comporta la imagen como bloque (para poder centrarla) */
+  margin: 2.5rem auto; /* Da espacio arriba/abajo y la centra horizontalmente */
+  border-radius: 1rem; /* Esquinas redondeadas */
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1); /* Sombra elegante */
+}
+
+.video-container { /* Caja que envuelve un vídeo */
+  text-align: center; /* Centra el contenido (el vídeo) */
+  margin-bottom: 2rem; /* Margen inferior */
+  padding: 1rem; /* Espacio interior */
+}
+
+.video-container video { /* El propio reproductor de vídeo */
+  max-width: 100%; /* Responsivo: no supera la pantalla */
+  height: auto; /* Proporcional */
+  border: 0.3rem solid var(--color-blanco); /* Marco blanco alrededor del vídeo */
+  border-radius: 1.2rem; /* Esquinas curvas del vídeo */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); /* Sombra para resaltar */
+}
+
+/* --- 6. EFECTO SCROLL TARJETAS (SCROLLYTELLING) --- */
+.seccion-scroll-tarjetas { /* Pista de scroll */
+  height: 500vh; /* Fuerza una altura de 5 veces la pantalla para tener mucho recorrido al hacer scroll */
+  position: relative; /* Contexto de posicionamiento para los elementos hijos */
+  margin-bottom: 0; /* Sin margen inferior */
+}
+
+.contenedor-pegajoso-tarjetas { /* Contenedor que "atrapa" la vista del usuario */
+  position: sticky; /* Se queda fijo en la pantalla mientras bajas por los 500vh del padre */
+  top: 15vh; /* Se "pega" cuando el borde superior llega al 15% de la pantalla */
+  height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Apila el título arriba y las tarjetas abajo */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+}
+
+.contenedor-pegajoso-tarjetas h2 { /* Título de la sección animada */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8); /* Sombra blanca para que resalte incluso sobre fondos complejos */
+  margin-bottom: 3rem; /* Separación con las tarjetas */
+}
+
+.fases-stack { /* Cuadrícula donde se apilarán las tarjetas */
+  display: grid; /* Activa la cuadrícula (Grid) */
+  grid-template-areas: "pila"; /* Define una única área llamada "pila" */
+  max-width: 28rem; /* Ancho máximo de las tarjetas (restringe su tamaño) */
+}
+.fases-stack .fase-card h3 {
+  color: var(--color-titulo-tarjeta);
+}
+
+/* Diseño base de la tarjeta (Estado Inicial / Oculto) */
+.fases-stack .fase-card {
+  grid-area: pila; /* Asigna TODAS las tarjetas a la misma área (se ponen literalmente una encima de la otra) */
+  opacity: 0; /* Invisible por defecto */
+  visibility: hidden; /* Oculta funcionalmente (no interactuable) */
+  transform: translateY(4rem) scale(0.9); /* Desplazada hacia abajo y un poco más pequeña */
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Anima su entrada suavemente */
+  padding: 4rem; /* Mucho espacio interior */
+  border-radius: 1.2rem; /* Esquinas redondeadas */
+  border: 0.1rem solid var(--color-borde); /* Borde sutil */
+  text-align: center; /* Texto centrado */
+  margin-bottom: 1rem; /* Espaciado con el texto inferior */
+  font-size: 1.5rem; /* Tamaño de título medio-grande */
+}
+
+/* Estado "Activa" de la tarjeta (Activado vía JavaScript al hacer scroll) */
+.fases-stack .fase-card.activa {
+  opacity: 1; /* Se vuelve completamente visible */
+  visibility: visible; /* Se puede interactuar con ella */
+  transform: translateY(0) scale(1); /* Sube a su posición original y recupera el 100% de tamaño (Efecto aparición) */
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); /* Sombra de elevación */
+}
+
+/* Colores personalizados por tarjeta (Sobrescriben el fondo base) */
+/* nth-child(X) selecciona elementos según su orden de aparición en el HTML */
+
+/* Tarjeta 1 */
+.fases-stack .fase-card:nth-child(1) { background-color: rgb(178, 38, 47); color: #fff; } /* Fondo Rojo, Texto Blanco */
+
+/* Tarjeta 2 */
+.fases-stack .fase-card:nth-child(2) { background-color: rgba(8, 55, 115, 0.9); color: #fff; } /* Fondo Azul oscuro, Texto Blanco */
+
+/* Tarjeta 3 */
+.fases-stack .fase-card:nth-child(3) { background-color: rgb(6, 143, 205); color: #fff; } /* Fondo Azul claro, Texto Blanco */
+
+/* Tarjeta 4 */
+.fases-stack .fase-card:nth-child(4) { background-color: #1b9a8c; color: #fff; } /* Fondo Verde Turquesa, Texto Blanco */
+
+/* Tarjeta 5 */
+.fases-stack .fase-card:nth-child(5) { background-color: rgba(255, 192, 33, 0.9); color: #ffffff; } /* Fondo Amarillo, Texto muy oscuro (#111) para contrastar */
+
+/* Para los navegadores móviles o si falla el scrollytelling (Grilla de respaldo) */
+.fases-grid {
+  display: grid; /* Activa la cuadrícula */
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Hace que las tarjetas se adapten solas: columnas de mínimo 18rem y si sobra espacio, lo rellenan (1fr) */
+  gap: 2rem; /* Espacio entre filas y columnas de 2rem */
+}
+
+/* --- 7. PIE DE PÁGINA --- */
+footer { /* Contenedor inferior de la web */
+  background-color: var(--color-fondo-footer); /* Fondo oscuro */
+  color: var(--color-texto-footer); /* Texto gris */
+  text-align: center; /* Todo el texto centrado */
+  padding: 3rem 0; /* Espacio interno arriba y abajo */
+  margin: 4rem auto 0 auto; /* Lo empuja 4rem hacia abajo separándolo del contenido principal */
+  border-radius: 1.5rem 1.5rem 0 0; /* Esquinas superiores curvas (look de pestaña invertida) */
+}
+
+.footer-content { /* Caja interior del footer */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  gap: 1.5rem; /* Espacio vertical de 1.5rem entre elementos */
+}
+
+.footer-content p { /* Párrafos dentro del contenido del footer */
+  color: #fff; /* Asegura que sean blancos para contrastar con el fondo oscuro del footer */
+}
+
+.nav-button { /* Botones de navegación (como "Siguiente" o "Anterior") */
+  background-color: rgb(100 114 138); /* Fondo azul/grisáceo sólido */
+  color: var(--color-blanco); /* Texto blanco */
+  padding: 0.8rem 2rem; /* Tamaño del botón */
+  text-decoration: none; /* Sin línea inferior */
+  border-radius: 50rem; /* Forma de píldora */
+  font-weight: bold; /* Negrita */
+  transition: all 0.3s ease; /* Transición para efecto hover */
+}
+
+.nav-button:hover { /* Al pasar el ratón por el botón de navegación */
+  background-color: var(--color-hover); /* Cambia al azul destacado global */
+  transform: scale(1.05); /* Crece un 5% */
+}
+
+/* --- 8. MODO OSCURO (LA MAGIA DE LAS VARIABLES) --- */
+/* Al aplicar esta clase al "body" (generalmente con JavaScript), sobrescribe las variables globales */
+body.dark-mode {
+  --globalmessage-segment-background: #1a1a1a; /* El fondo general pasa a ser un gris casi negro */
+  --globalmessage-segment-text-color: #f4f4f4; /* El texto general pasa a ser gris muy claro/blanco */
+  --color-secundario: #222; /* Oscurece el color secundario */
+  --color-fondo-footer: #000; /* Hace que el footer sea negro puro */
+  --color-primario: #66b2ff; /* Pasa el color primario (ej: títulos activos) a un azul pastel claro para resaltar en la oscuridad */
+
+  --color-fondo-cajas: rgba(42, 42, 42, 0.48); /* El fondo de las tarjetas pasa a ser oscuro y semitransparente */
+  --color-fondo-header: rgba(42, 42, 42, 0.98); /* La cabecera pasa a ser gris oscuro con 85% de opacidad */
+  --color-borde: rgba(255, 255, 255, 0.25); /* Los bordes pasan a ser blancos y semitransparentes */
+  --color-texto-negro: rgba(255, 255, 255, 0.9); /* Redefine lo que era el "texto negro" en modo día a "texto blanco" en modo noche */
+  --color-titulo-tarjeta: rgba(255, 255, 255, 0.9);
+}
+
+
+/* --- 9. DISEÑO RESPONSIVE (MÓVILES) --- */
+/* Las siguientes reglas SOLO se activan en pantallas de 48rem (unos 768px) o menores */
+@media (max-width: 48rem) {
+  .header-content { /* Contenedor de la cabecera en móvil */
+    flex-direction: column; /* Apila el logotipo y el menú (uno debajo del otro) */
+    gap: 1rem; /* Deja un hueco de 1rem entre ellos */
+  }
+
+  nav ul { /* Lista de botones del menú en móvil */
+    justify-content: center; /* Centra los botones en la pantalla */
+    gap: 0.5rem; /* Reduce el espacio entre botones para que quepan todos */
+  }
+
+  nav ul li a { /* Enlaces del menú en móvil */
+    padding: 0.4rem 1rem; /* Reduce un poco el tamaño interno del botón */
+    font-size: 0.8rem; /* Hace la letra ligeramente más pequeña */
+  }
+
+  h1#titulo-principal { /* Título web principal en móvil */
+    font-size: 1.4rem; /* Reduce el tamaño de fuente */
+  }
+
+  main { /* Contenedor principal en móvil */
+    padding: 3rem 0; /* Reduce el espacio de la parte superior (de 5rem a 3rem) para ganar espacio visible */
+  }
+
+  .container { /* Contenedor limitador en móvil */
+    padding: 0 4vw; /* Sigue manteniendo el margen de un 4% respecto al ancho */
+  }
+
+  .fases-grid { /* Cuadrícula de respaldo para fases en móvil */
+    grid-template-columns: 1fr; /* Fuerza una sola columna que ocupa todo el espacio (1 Fraction) */
+    max-width: 25rem; /* Pone un límite de ancho adecuado a pantallas de móvil */
+    margin: 0 auto; /* Centra la columna */
+  }
+
+  header, footer, .container { /* Agrupa estos elementos clave en móvil */
+    max-width: 100%; /* Garantiza que ocupen todo el ancho de la pequeña pantalla */
+    border-radius: 0; /* Elimina cualquier borde redondeado externo para aprovechar el área de lado a lado */
+  }
+
+  header { /* Excepción de borde para el header en móvil */
+    border-radius: 0 0 1rem 1rem; /* Le devuelve las esquinas redondas solo en la parte inferior para que siga viéndose bien */
+  }
+}

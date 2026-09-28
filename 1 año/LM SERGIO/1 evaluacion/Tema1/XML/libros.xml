@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<libros>
+    <libreria nombre="Casa del Libro" url="https://www.casadellibro.com">
+        <libro>
+            <ISBN>978-84-12345-00-1</ISBN>
+            <titulo>Introducción a XML y XSLT</titulo>
+            <nivel>Básico</nivel>
+            <autores>
+                <autor>Ana García</autor>
+            </autores>
+            <editorial>TecnoLibro</editorial>
+            <fecha_publicacion>2021</fecha_publicacion>
+            <web>https://www.casadellibro.com/libro-introduccion-xml-xslt</web>
+            <precio moneda="EUR">29.95</precio>
+        </libro>
+        <libro>
+            <ISBN>978-84-12345-01-8</ISBN>
+            <titulo>Programación con XML</titulo>
+            <nivel>Intermedio</nivel>
+            <autores>
+                <autor>Carlos Gómez</autor>
+            </autores>
+            <editorial>Ediciones Programar</editorial>
+            <fecha_publicacion>2022</fecha_publicacion>
+            <web>https://www.casadellibro.com/libro-programacion-xml</web>
+            <precio moneda="EUR">35.00</precio>
+        </libro>
+        <libro>
+            <ISBN>978-84-12345-02-5</ISBN>
+            <titulo>XML Avanzado: Esquemas y Validación</titulo>
+            <nivel>Avanzado</nivel>
+            <autores>
+                <autor>Laura Fernández</autor>
+                <autor>Pedro Ruiz</autor>
+            </autores>
+            <editorial>Informática Esencial</editorial>
+            <fecha_publicacion>2023</fecha_publicacion>
+            <web>https://www.casadellibro.com/libro-xml-avanzado</web>
+            <precio moneda="EUR">45.50</precio>
+        </libro>
+    </libreria>
+
+    <libreria nombre="Buscalibre" url="https://www.buscalibre.ec">
+        <libro>
+            <ISBN>9780072193992</ISBN>
+            <titulo>Xml Security (en Inglés)</titulo>
+            <nivel>Avanzado</nivel>
+            <autores>
+                <autor>Blake Dournaee</autor>
+            </autores>
+            <editorial>Mcgraw-Hill/Osborne Media</editorial>
+            <fecha_publicacion>2002</fecha_publicacion>
+            <web>https://www.buscalibre.ec/libro-xml-security/9780072193992/p/18750992</web>
+            <precio moneda="USD">66.84</precio>
+        </libro>
+        <libro>
+            <ISBN>9781491976079</ISBN>
+            <titulo>Learning XML</titulo>
+            <nivel>Intermedio</nivel>
+            <autores>
+                <autor>Erik T. Ray</autor>
+            </autores>
+            <editorial>O'Reilly Media</editorial>
+            <fecha_publicacion>2003</fecha_publicacion>
+            <web>https://www.buscalibre.ec/libro-learning-xml/9781491976079/p/50485981</web>
+            <precio moneda="USD">32.99</precio>
+        </libro>
+        <libro>
+            <ISBN>9780596007627</ISBN>
+            <titulo>XML in a Nutshell</titulo>
+            <nivel>Básico-Intermedio</nivel>
+            <autores>
+                <autor>Elliotte Rusty Harold</autor>
+                <autor>W. Scott Means</autor>
+            </autores>
+            <editorial>O'Reilly Media</editorial>
+            <fecha_publicacion>2004</fecha_publicacion>
+            <web>https://www.buscalibre.ec/libro-xml-in-a-nutshell/9780596007627/p/49780287</web>
+            <precio moneda="USD">40.50</precio>
+        </libro>
+    </libreria>
+</libros>

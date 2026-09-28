@@ -1,0 +1,13 @@
+Algoritmo Conversor Imperial
+CONST
+DECIMALES metro = 39,27
+Texto medidadPulgada= "pulgadas"
+ENTERO pies = 12
+VAR
+DECIMALES metros, pulgadas, pie.
+INICIO
+ESCRIBIR ("Introduce los metros que quieres convertir(decimales con ,)")
+LEER (metros)
+pulgadas = metros*metro
+pie = pulgadas*pies 
+ESCRIBIR ("Los metros "+metros+"en pulgadas y en pies es "+pulgadas+" pulgadas "+pie+" pies." )

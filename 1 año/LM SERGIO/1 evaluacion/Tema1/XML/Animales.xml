@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<animales>
+    <animal id="1">
+        <nombre>Tiburón blanco</nombre>
+        <nombre_cientifico>Carcharodon carcharias</nombre_cientifico>
+    </animal>
+    <animal id="2">
+        <nombre>Atún rojo</nombre>
+        <nombre_cientifico>Thumus thynmus</nombre_cientifico>
+    </animal>
+</animales>

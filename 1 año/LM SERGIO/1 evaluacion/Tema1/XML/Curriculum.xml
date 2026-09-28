@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cv>
+    <NombreApellidos>Ivan Poyda Oleksyuk</NombreApellidos>
+    <AñoDeNacimiento>22/08/2005</AñoDeNacimiento>
+    <Residencia>
+        <Ciudad>Valencia</Ciudad>
+        <Pais>España</Pais>
+    </Residencia>
+    <DatosDeContacto>
+        <Teléfono>564546456</Teléfono>
+        <CorreoElectronico>ivan@gmail.com</CorreoElectronico>
+        <PerfilDeLinkedln>@ivantrabjo</PerfilDeLinkedln>
+    </DatosDeContacto>
+    <BreveDescripciónGeneral>Me gusta la Informatica</BreveDescripciónGeneral>
+</cv>

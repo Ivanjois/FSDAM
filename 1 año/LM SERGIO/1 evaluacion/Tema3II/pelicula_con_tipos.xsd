@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Ivan Poyda-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Tipos personalizados-->
+    <xs:simpleType name="Tipo_Genero">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Accion"/>
+            <xs:enumeration value="Comedia"/>
+            <xs:enumeration value="Drama"/>
+            <xs:enumeration value="Crimen"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tipo_max15car">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tipo_entre0y10">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tipo_patron19XX">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="19\d\d"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Elemento raíz -->
+    <xs:element name="pelicula">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="genero" type="Tipo_Genero" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="director" type="Tipo_max15car"/>
+
+                <xs:element name="valoracion">
+                    <xs:complexType>
+                        <xs:attribute name="nota" type="Tipo_entre0y10" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="reparto">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="interprete" type="xs:string"
+                                        minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+
+            <xs:attribute name="estreno" type="Tipo_patron19XX"/>
+            <xs:attribute name="minutos" type="xs:integer" use="optional" default="100"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
