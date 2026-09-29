@@ -1,40 +1,44 @@
-import kotlin.random.Random
-
 class MuestreadorEnteros {
-    // Propiedad privada de tipo array de 5 enteros
     private val numeros = IntArray(5)
 
     init {
-        // En el bloque init llamamos al método privado para cargar los números
         cargarNumeros()
     }
 
-    // Método privado que carga valores aleatorios comprendidos entre 0 y 10
     private fun cargarNumeros() {
         for (i in numeros.indices) {
-            numeros[i] = Random.nextInt(0, 11) // 0..10 inclusive
+            numeros[i] = (0..10).random()
         }
     }
 
-    // Método público que muestra el array resultante
-    fun mostrarArreglo() {
-        println("Array: ${numeros.joinToString(", ")}")
+    fun mostrarArreglo(): String {
+        return "${numeros.contentToString()}"
     }
 
-    // Método público que muestra el mayor elemento
-    fun mostrarMayor() {
-        println("El mayor elemento es: ${numeros.maxOrNull()}")
+    fun mostrarMayor(): Int {
+        var mayor: Int = numeros[0]
+        for (i in numeros.indices) {
+            if (numeros[i] > mayor) {
+                mayor = numeros[i]
+            }
+        }
+        return mayor
     }
 
-    // Método público que muestra el menor elemento
-    fun mostrarMenor() {
-        println("El menor elemento es: ${numeros.minOrNull()}")
+    fun mostrarMenos(): Int {
+        var menos: Int = numeros[0]
+        for (i in numeros.indices) {
+            if (numeros[i] < menos) {
+                menos = numeros[i]
+            }
+        }
+        return menos
     }
 }
 
 fun main() {
     val muestreador = MuestreadorEnteros()
-    muestreador.mostrarArreglo()
-    muestreador.mostrarMayor()
-    muestreador.mostrarMenor()
+    println(muestreador.mostrarArreglo())
+    println(muestreador.mostrarMayor())
+    println(muestreador.mostrarMenos())
 }
