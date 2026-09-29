@@ -4,23 +4,26 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 fun main() {
+    // 1. Definición de rutas base y subdirectorios
     val rutaDatos = Path.of("datos")
     val rutaDatosIni = rutaDatos.resolve("datos_ini")
     val rutaDatosFin = rutaDatos.resolve("datos_fin")
 
     println("CREACIÓN DE RUTAS PROYECTO")
+    println("Creando rutas...")
 
-    if(Files.notExists(rutaDatosIni)) {
-        println("Creando rutas...")
+    // 2. Comprobación de directorios: Si no existen, se crean con Files.createDirectories
+    if (Files.notExists(rutaDatosIni)) {
         println("Creación de ruta para DATOS_INI")
         Files.createDirectories(rutaDatosIni)
     }
+
     if (Files.notExists(rutaDatosFin)) {
-        println("Creando ruta para DATOS_FIN")
+        println("Creación de ruta para DATOS_FIN")
         Files.createDirectories(rutaDatosFin)
     }
-    //falta lo del fichero aquiiiiiiiiiiiiiiii
 
+    // 3. Comprobación y listado de la estructura de directorios y ficheros con Files.walk
     println("MOSTRANDO ESTRUCTURA DE DIRECTORIOS Y FICHEROS")
     try {
         Files.walk(rutaDatos).use { stream ->
