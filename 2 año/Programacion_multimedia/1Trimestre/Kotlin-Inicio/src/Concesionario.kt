@@ -1,4 +1,4 @@
-class Concesionario (var nombre: String) {
+class Concesionario (var nombre: String) {//
     val coches = mutableListOf<Coche>()
 
     fun agregar(coche: Coche) {

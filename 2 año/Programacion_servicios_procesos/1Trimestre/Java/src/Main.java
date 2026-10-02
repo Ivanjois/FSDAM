@@ -24,12 +24,15 @@ public class Main {
         try {
             miPlay.installGame(spiderman);
             miPlay.playGame();
+
+            System.out.println("\n-- Prueba de sobrecarga playGame(titulo) --");
+            miPlay.playGame("Spider-Man 2");
+            miPlay.playGame("God of War");
         } catch (JuegoNoCompatibleException e) {
             System.out.println("Error inesperado: " + e.getMessage());
         }
 
-        System.out.println();
-
+        System.out.println("-- Prueba de incompatibilidad (Excepción) --");
         try {
             System.out.println("Intentando instalar Zelda (Switch) en PlayStation...");
             miPlay.installGame(zelda);
@@ -38,5 +41,18 @@ public class Main {
         }
 
         miPlay.switchOff();
+        System.out.println("-- Prueba de intentar jugar con la consola apagada --");
+        miPlay.playGame();
+
+        System.out.println("=== PRUEBA DE CONSOLA XBOX Y JUEGO DIGITAL ===");
+        IConsola miXbox = new Consola(Plataforma.XBOX);
+        miXbox.switchOn();
+        try {
+            miXbox.installGame(halo);
+            miXbox.playGame();
+        } catch (JuegoNoCompatibleException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        miXbox.switchOff();
     }
 }

@@ -1,4 +1,4 @@
-fun main() {
+fun main() { //Estw es el main donde inicializas la clase dando le lo que vale x he y, luego printeo su metodo que devuelve una frase de donde esta situado.
     val punto1 = Punto(1, 1)
     val punto2 = Punto(-1, 1)
     val punto3 = Punto(-1, -1)
