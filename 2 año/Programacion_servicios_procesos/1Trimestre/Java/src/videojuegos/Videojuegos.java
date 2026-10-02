@@ -1,3 +1,9 @@
+package videojuegos;
+
+import consolas.IConsola;
+import enums.Genero;
+import enums.Plataforma;
+
 public abstract class Videojuegos {
     private final String titulo;
     private final double precioBase;

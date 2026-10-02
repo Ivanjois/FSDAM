@@ -1,3 +1,9 @@
+package consolas;
+
+import enums.Plataforma;
+import excepciones.JuegoNoCompatibleException;
+import videojuegos.Videojuegos;
+
 import java.util.ArrayList;
 import java.util.List;
 

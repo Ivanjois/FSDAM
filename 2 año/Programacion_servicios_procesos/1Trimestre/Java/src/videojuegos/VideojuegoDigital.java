@@ -1,3 +1,8 @@
+package videojuegos;
+
+import enums.Genero;
+import enums.Plataforma;
+
 public class VideojuegoDigital extends Videojuegos {
     private final double porcentajeDescuento;
 

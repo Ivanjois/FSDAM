@@ -1,3 +1,8 @@
+package videojuegos;
+
+import enums.Genero;
+import enums.Plataforma;
+
 public class VideojuegoFisico extends Videojuegos {
     private final double costoEnvio;
 

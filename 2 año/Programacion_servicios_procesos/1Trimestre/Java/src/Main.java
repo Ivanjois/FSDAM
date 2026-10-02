@@ -1,3 +1,12 @@
+import consolas.Consola;
+import consolas.IConsola;
+import enums.Genero;
+import enums.Plataforma;
+import excepciones.JuegoNoCompatibleException;
+import videojuegos.VideojuegoDigital;
+import videojuegos.VideojuegoFisico;
+import videojuegos.Videojuegos;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,24 +26,22 @@ public class Main {
             System.out.println(v.getTitulo() + " [" + v.getGenero() + "] (" + v.getPlataforma() + ") - Precio final: " + v.calcularPrecioFinal() + "€");
         }
 
-        System.out.println("\n=== PRUEBAS CON CONSOLAS Y EXCEPCIONES ===");
+        System.out.println("=== PRUEBAS CON CONSOLAS Y EXCEPCIONES ===");
         IConsola miPlay = new Consola(Plataforma.PLAYSTATION);
         miPlay.switchOn();
 
         try {
-            // Instalación y ejecución del primer juego
             miPlay.installGame(spiderman);
             miPlay.playGame();
 
-            // Prueba de sobrecarga de playGame(String titulo)
-            System.out.println("\n-- Prueba de sobrecarga playGame(titulo) --");
+            System.out.println("-- Prueba de sobrecarga playGame(titulo) --");
             miPlay.playGame("Spider-Man 2");
-            miPlay.playGame("God of War"); // Juego no instalado
+            miPlay.playGame("God of War");
         } catch (JuegoNoCompatibleException e) {
             System.out.println("Error inesperado: " + e.getMessage());
         }
 
-        System.out.println("\n-- Prueba de incompatibilidad (Excepción) --");
+        System.out.println("-- Prueba de incompatibilidad (Excepción) --");
         try {
             System.out.println("Intentando instalar Zelda (Switch) en PlayStation...");
             miPlay.installGame(zelda);
@@ -42,13 +49,11 @@ public class Main {
             System.out.println("¡Excepción capturada con éxito!: " + e.getMessage());
         }
 
-        // Apagar consola y comprobar control de estado
         miPlay.switchOff();
-        System.out.println("\n-- Prueba de intentar jugar con la consola apagada --");
+        System.out.println("-- Prueba de intentar jugar con la consola apagada --");
         miPlay.playGame();
 
-        // Prueba con otra consola y juego digital
-        System.out.println("\n=== PRUEBA DE CONSOLA XBOX Y JUEGO DIGITAL ===");
+        System.out.println("=== PRUEBA DE CONSOLA XBOX Y JUEGO DIGITAL ===");
         IConsola miXbox = new Consola(Plataforma.XBOX);
         miXbox.switchOn();
         try {
