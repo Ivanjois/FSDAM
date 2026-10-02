@@ -14,7 +14,7 @@ public class Main {
         tienda.add(spiderman);
 
         for (Videojuegos v : tienda) {
-            System.out.println(v.getTitulo() + " (" + v.getPlataforma() + ") - Precio final: " + v.calcularPrecioFinal() + "€");
+            System.out.println(v.getTitulo() + " [" + v.getGenero() + "] (" + v.getPlataforma() + ") - Precio final: " + v.calcularPrecioFinal() + "€");
         }
 
         System.out.println("\n=== PRUEBAS CON CONSOLAS Y EXCEPCIONES ===");
@@ -22,17 +22,19 @@ public class Main {
         miPlay.switchOn();
 
         try {
+            // Instalación y ejecución del primer juego
             miPlay.installGame(spiderman);
             miPlay.playGame();
 
+            // Prueba de sobrecarga de playGame(String titulo)
             System.out.println("\n-- Prueba de sobrecarga playGame(titulo) --");
             miPlay.playGame("Spider-Man 2");
-            miPlay.playGame("God of War");
+            miPlay.playGame("God of War"); // Juego no instalado
         } catch (JuegoNoCompatibleException e) {
             System.out.println("Error inesperado: " + e.getMessage());
         }
 
-        System.out.println("-- Prueba de incompatibilidad (Excepción) --");
+        System.out.println("\n-- Prueba de incompatibilidad (Excepción) --");
         try {
             System.out.println("Intentando instalar Zelda (Switch) en PlayStation...");
             miPlay.installGame(zelda);
@@ -40,11 +42,13 @@ public class Main {
             System.out.println("¡Excepción capturada con éxito!: " + e.getMessage());
         }
 
+        // Apagar consola y comprobar control de estado
         miPlay.switchOff();
-        System.out.println("-- Prueba de intentar jugar con la consola apagada --");
+        System.out.println("\n-- Prueba de intentar jugar con la consola apagada --");
         miPlay.playGame();
 
-        System.out.println("=== PRUEBA DE CONSOLA XBOX Y JUEGO DIGITAL ===");
+        // Prueba con otra consola y juego digital
+        System.out.println("\n=== PRUEBA DE CONSOLA XBOX Y JUEGO DIGITAL ===");
         IConsola miXbox = new Consola(Plataforma.XBOX);
         miXbox.switchOn();
         try {

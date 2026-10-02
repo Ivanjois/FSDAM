@@ -1,8 +1,8 @@
 public abstract class Videojuegos {
-    private String titulo;
-    private double precioBase;
-    private Genero genero;
-    private Plataforma plataforma;
+    private final String titulo;
+    private final double precioBase;
+    private final Genero genero;
+    private final Plataforma plataforma;
 
     public Videojuegos(String titulo, double precioBase, Genero genero, Plataforma plataforma) {
         this.titulo = titulo;

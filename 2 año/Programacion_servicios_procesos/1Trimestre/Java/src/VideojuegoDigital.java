@@ -1,5 +1,5 @@
 public class VideojuegoDigital extends Videojuegos {
-    private double porcentajeDescuento;
+    private final double porcentajeDescuento;
 
     public VideojuegoDigital(String titulo, double precioBase, Genero genero, Plataforma plataforma, double porcentajeDescuento) {
         super(titulo, precioBase, genero, plataforma);
