@@ -10,7 +10,7 @@ fun main() {
 
     println("CREACIÓN DE RUTAS PROYECTO")
 
-    if(Files.notExists(rutaDatosIni)) {
+    if (Files.notExists(rutaDatosIni)) {
         println("Creando rutas...")
         println("Creación de ruta para DATOS_INI")
         Files.createDirectories(rutaDatosIni)
@@ -19,17 +19,18 @@ fun main() {
         println("Creando ruta para DATOS_FIN")
         Files.createDirectories(rutaDatosFin)
     }
-    //falta lo del fichero aquiiiiiiiiiiiiiiii
 
     println("MOSTRANDO ESTRUCTURA DE DIRECTORIOS Y FICHEROS")
     try {
         Files.walk(rutaDatos).use { stream ->
             stream.sorted().forEach { path ->
-                if (Files.isDirectory(path)) {
-                    println("[DIR] ${path.fileName}")
-                } else if (Files.isRegularFile(path)) {
-                    println("[FILE] ${path.fileName}")
+                val profundidad = path.nameCount - rutaDatos.nameCount
+                val indentacion = " ".repeat(path.nameCount)
+                val tipoArchivo = if (Files.isDirectory(path)) { ("[DIR] ${path.fileName}") } else { ("[FILE] ${path.fileName}") }
+                if (profundidad >= 0){
+                    println("$indentacion$tipoArchivo")
                 }
+
             }
         }
     } catch (e: Exception) {

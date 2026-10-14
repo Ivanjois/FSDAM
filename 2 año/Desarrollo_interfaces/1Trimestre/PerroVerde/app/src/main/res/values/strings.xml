@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PerroVerde</string>
+    <string name="saludo">Hola</string>
+    <string name="acess">Acess</string>
+    <string name="register">Register</string>
+    <string name="titulo_rocky">¡Hola, soy Rocky!</string>
+    <string name="edad_rocky">3 años</string>
+    <string name="descripcion_rocky">Rocky es un perro cariñoso, juguetón y muy sociable. Busca una familia con la que compartir muchas aventuras.</string>
+    <string name="compatibilidad">Compatibilidad contigo</string>
+    <string name="hint_mensaje">Escribe un mensaje...</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_adoptar">Adoptar</string>
+</resources>
