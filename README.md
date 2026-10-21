@@ -18,10 +18,13 @@ Repositorio que contiene el material de estudio, proyectos, prácticas y ejercic
 - **Acceso_a_datos/**: Manejo de ficheros, persistencia de datos, bases de datos y ORMs.
   - `1Trimestre/VideoMovie`: Proyecto de gestión en Kotlin.
 - **Desarrollo_interfaces/**: Creación de interfaces de usuario y diseño UX/UI.
+  - `1Trimestre/Actividades_y_Retos`: Ejercicios de clase y maquetas (Reto1, PerroVerde...).
+  - `1Trimestre/Proyectos_UI`: Proyectos completos de interfaz (MyApplication...).
 - **Digitalizacion_aplicada/**: Transformación y digitalización aplicada a sectores productivos.
 - **Introduccion_al_nuvol_public/**: Computación y servicios en la nube pública.
 - **Programacion_multimedia/**: Desarrollo de aplicaciones móviles y multimedia (Kotlin/Android).
-  - `1Trimestre/Kotlin-Inicio`
+  - `1Trimestre/Actividades_Kotlin`: Ejercicios de lógica y consola (Kotlin-Inicio...).
+  - `1Trimestre/Proyectos_Android`: Aplicaciones Android Studio / Compose (HolaCompose, Test...).
 - **Programacion_servicios_procesos/**: Concurrencia, sockets, multihilo y procesos en red.
 - **Proyecto_intermodular/**: Proyecto final integrador de 2º curso.
 - **Sistemas_gestion_empresarial/**: Implantación y parametrización de ERP/CRM.
