@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Asignación de grupos"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Cabecera -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombre"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Grupo A"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Grupo B"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Persona 1 -->
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAna"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ana"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbAnaA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <CheckBox
+                android:id="@+id/cbAnaB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Persona 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPablo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pablo"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbPabloA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbPabloB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLuis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Luis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbLuisA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbLuisB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvMarta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Marta"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbMartaA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbMartaB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLaura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laura"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbLauraA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbLauraB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvCarlos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Carlos"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbCarlosA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbCarlosB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 7 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSofia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sofía"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbSofiaA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbSofiaB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 8 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvJorge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jorge"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbJorgeA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbJorgeB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 9 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvElena"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Elena"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbElenaA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbElenaB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Persona 10 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDavid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="David"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/cbDavidA"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cbDavidB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConfirmarGrupos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Confirmar grupos" />
+
+        <TextView
+            android:id="@+id/tvGrupoA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Grupo A:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvGrupoB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Grupo B:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvRepetidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Repetidos:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</ScrollView>
