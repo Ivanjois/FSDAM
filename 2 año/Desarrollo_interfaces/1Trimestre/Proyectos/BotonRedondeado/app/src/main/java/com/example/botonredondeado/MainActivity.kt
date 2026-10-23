@@ -1,20 +1,45 @@
 package com.example.botonredondeado
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.botonredondeado.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Relaciona esta Activity con activity_main.xml.
+        //setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        binding.miCard.titulo = "Android Studio"
+
+        binding.miCard.descripcion =
+            "Aprende a crear interfaces Android"
+
+        binding.miCard.textoBoton = "Ver curso"
+
+        binding.miCard.setOnAccionClickListener {
+
+            Toast.makeText(
+                this,
+                "¡Vamos al curso!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        binding.mibutton.setOnAccionClickListener {
+
+            Toast.makeText(
+                this,
+                "¡Vamos al curso!",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

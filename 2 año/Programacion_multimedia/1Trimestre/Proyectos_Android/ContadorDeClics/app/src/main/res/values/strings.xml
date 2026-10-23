@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ContadorDeClics</string>
+    <string name="click_me">!PÚLSAME!</string>
+    <string name="click_reset">Reset</string>
+    <string name="clics">Has hecho clic %1$d veces</string>
+    <string name="points">%1$s tienes %2$d puntos</string>
+    <string name="m_s_puntos">Más puntos</string>
 </resources>

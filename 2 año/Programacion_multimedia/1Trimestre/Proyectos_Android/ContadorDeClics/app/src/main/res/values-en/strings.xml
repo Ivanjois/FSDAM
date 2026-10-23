@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name" translatable="false">Click on button</string>
+        <string name="click_me" translatable="false">Click me</string>
+        <string name="click_reset" translatable="false">Reset</string>
+        <string name="clics">You have clicked %1$d times</string>
+        <string name="points">%1$s have %2$d points</string>
+        <string name="m_s_puntos">More points</string>
+</resources>
