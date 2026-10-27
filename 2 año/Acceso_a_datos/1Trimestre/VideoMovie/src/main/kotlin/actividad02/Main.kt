@@ -1,4 +1,8 @@
-package org.example
+/**
+ * Actividad 02 - Gestion de ficheros y directorios con java.nio.file.
+ * Crea las rutas 'datos_ini' y 'datos_fin' y recorre la jerarquia del proyecto usando Files.walk.
+ */
+package actividad02
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -8,15 +12,15 @@ fun main() {
     val rutaDatosIni = rutaDatos.resolve("datos_ini")
     val rutaDatosFin = rutaDatos.resolve("datos_fin")
 
-    println("CREACIÓN DE RUTAS PROYECTO")
+    println("CREACION DE RUTAS PROYECTO")
+    println(" Creando rutas...")
 
     if (Files.notExists(rutaDatosIni)) {
-        println("Creando rutas...")
-        println("Creación de ruta para DATOS_INI")
+        println(" Creacion de ruta para DATOS_INI")
         Files.createDirectories(rutaDatosIni)
     }
     if (Files.notExists(rutaDatosFin)) {
-        println("Creando ruta para DATOS_FIN")
+        println(" Creacion de ruta para DATOS_FIN")
         Files.createDirectories(rutaDatosFin)
     }
 
@@ -30,10 +34,9 @@ fun main() {
                 if (profundidad >= 0){
                     println("$indentacion$tipoArchivo")
                 }
-
             }
         }
     } catch (e: Exception) {
-        println("Ocurrió un error al leer la estructura de directorios: ${e.message}")
+        println("Ocurrio un error al leer la estructura de directorios: ${e.message}")
     }
 }
