@@ -29,10 +29,29 @@
             android:id="@+id/miCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- Contador (arriba del componente de botones) -->
+        <TextView
+            android:id="@+id/txtContadorMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="0"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
         <com.example.botonredondeado.Mybutton
-            android:id="@+id/miCard"
+            android:id="@+id/mibutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtMensajeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textSize="16sp" />
 
     </LinearLayout>
 

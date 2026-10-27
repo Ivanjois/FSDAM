@@ -12,34 +12,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Relaciona esta Activity con activity_main.xml.
-        //setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
+        // Configuración de la tarjeta
         binding.miCard.titulo = "Android Studio"
-
-        binding.miCard.descripcion =
-            "Aprende a crear interfaces Android"
-
+        binding.miCard.descripcion = "Aprende a crear interfaces Android"
         binding.miCard.textoBoton = "Ver curso"
 
         binding.miCard.setOnAccionClickListener {
-
-            Toast.makeText(
-                this,
-                "¡Vamos al curso!",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this, "¡Vamos al curso!", Toast.LENGTH_SHORT).show()
         }
-        binding.mibutton.setOnAccionClickListener {
 
-            Toast.makeText(
-                this,
-                "¡Vamos al curso!",
-                Toast.LENGTH_SHORT
-            ).show()
+        // Mostramos el valor inicial de Mybutton (0)
+        binding.txtContadorMain.text = binding.mibutton.contador.toString()
+
+        // Escuchamos los cambios del componente Mybutton
+        binding.mibutton.setOnCambioListener { nuevoValor, accion ->
+            binding.txtContadorMain.text = nuevoValor.toString()
+            binding.txtMensajeMain.text = accion
         }
     }
 }
