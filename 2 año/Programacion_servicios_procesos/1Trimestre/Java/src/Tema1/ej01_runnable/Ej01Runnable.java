@@ -1,16 +1,16 @@
-package Tema1;
+package Tema1.ej01_runnable;
 
-// 1. Clase MiTarea implementando la interfaz Runnable
+// 1. Crea una clase MiTarea, en su metodo run() debe haber un bucle que cuente del 1 al 5,
+// mostrando mensajes que incluyan el ID del hilo actual y el contador.
+// Entre cada una de las iteraciones simula que el hilo esta realizando alguna tarea con Thread.sleep(1000);.
 class MiTarea implements Runnable {
     @Override
     public void run() {
-        // Obtenemos el ID del hilo actual (en Java 11 se usa getId())
-        long threadId = Thread.currentThread().getId();
+        long id = Thread.currentThread().getId();
 
         for (int i = 1; i <= 5; i++) {
-            System.out.println("Hilo [ID: " + threadId + "] - Contador: " + i);
+            System.out.println("Hilo [ID: " + id + "] - Contador: " + i);
             try {
-                // Simula que el hilo está realizando alguna tarea
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 System.err.println("Hilo interrumpido: " + e.getMessage());
@@ -22,16 +22,18 @@ class MiTarea implements Runnable {
 
 public class Ej01Runnable {
     public static void main(String[] args) {
-        // 2. Crear 8 hilos que ejecuten MiTarea
-        Thread[] hilos = new Thread[8];
-        for (int i = 0; i < 8; i++) {
+        // 2. En la clase principal, en el metodo main, crea 8 hilos que ejecuten MiTarea.
+        int NUM_HILOS = 8;
+        Thread[] hilos = new Thread[NUM_HILOS];
+
+        for (int i = 0; i < NUM_HILOS; i++) {
             hilos[i] = new Thread(new MiTarea());
             hilos[i].start();
         }
 
         // 3. En el hilo principal (main):
-        // a. Bucle que cuenta del 1 al 5 y muestra mensajes con el contador
-        // b. Pausa de 1 segundo entre cada iteración
+        // a. Crea un bucle que cuente del 1 al 5 y muestre mensajes que incluyan el contador.
+        // b. Agrega una pausa de 1 segundo entre cada iteracion.
         for (int i = 1; i <= 5; i++) {
             System.out.println("Hilo Principal (main) - Contador: " + i);
             try {
@@ -41,7 +43,7 @@ public class Ej01Runnable {
             }
         }
 
-        // 4. Utiliza join() para esperar a que los hilos terminen
+        // 4. Despues del bucle principal, utiliza join() para esperar a que los hilos terminen.
         for (int i = 0; i < hilos.length; i++) {
             try {
                 hilos[i].join();
@@ -50,7 +52,7 @@ public class Ej01Runnable {
             }
         }
 
-        // 5. Mensaje indicando que el programa ha finalizado
+        // 5. Finalmente, muestra un mensaje indicando que el programa ha finalizado.
         System.out.println("El programa Ej01Runnable ha finalizado.");
     }
 }
