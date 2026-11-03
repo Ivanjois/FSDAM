@@ -28,7 +28,7 @@ import com.example.contadordeclics.ui.MyAppContent
 fun ClickCounter(modifier: Modifier = Modifier) {
     var times by rememberSaveable { mutableIntStateOf(0) }
     var puntos by rememberSaveable { mutableIntStateOf(0) }
-    var name = "Ivan"
+    val name = "Ivan"
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

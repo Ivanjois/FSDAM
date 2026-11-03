@@ -67,19 +67,17 @@ Para leer o sobrescribir un registro con `ID = 5`, el cabezal del canal salta di
 
 ---
 
-## 4. Estructura del Proyecto por Actividades
+## 4. Estructura Unificada del Proyecto
 
-El proyecto esta organizado de forma modular e independiente por paquetes:
+El proyecto implementa una arquitectura limpia y cohesiva donde todo el codigo se encuentra integrado en una unica aplicacion sin fragmentacion por actividades:
 
 ```text
 src/main/kotlin/
-├── actividad01/       --> Practica 1: Verificacion de entorno Gradle y compilador Kotlin.
-├── actividad02/       --> Practica 2: Gestion de directorios (datos_ini, datos_fin) y arbol con Files.walk.
-├── actividad03/       --> Practica 3: CRUD interactivo sobre ficheros CSV usando kotlin-csv.
-├── actividad04/       --> Practica 4: Deserializacion y lectura de ficheros XML con Jackson XML.
-├── actividad05/       --> Practica 5: Deserializacion y lectura de ficheros JSON con Kotlinx Serialization.
-├── actividad06/       --> Practica 6: Motor de conversion bidireccional entre CSV, XML y JSON.
-└── actividad07/       --> Practica 7: CRUD y acceso aleatorio en fichero binario (.dat) con FileChannel.
+├── Main.kt                             --> Punto de entrada unico con menu interactivo integral (CSV, XML, JSON, Conversiones, Fichero BIN).
+├── Videojuego.kt                       --> Modelo de datos unico del dominio, anotado para Jackson y kotlinx.serialization.
+├── VideojuegosWrapper.kt               --> Clase contenedora para mapeo jerarquico del elemento raiz <videojuegos> en XML.
+├── VideojuegoRepository.kt             --> Repositorio que unifica la persistencia CSV, XML, JSON y el motor de conversion.
+└── VideojuegoRandomAccessRepository.kt --> Repositorio de acceso directo O(1) con registros de 76 bytes (FileChannel y ByteBuffer).
 ```
 
 ---
@@ -91,8 +89,8 @@ src/main/kotlin/
   * `videojuegos.xml`: Estructura jerarquica envuelta en `<videojuegos>`.
   * `videojuegos.json`: Array JSON de objetos `@Serializable`.
 * **`datos/datos_fin/`**: Ficheros generados por la aplicacion:
-  * Ficheros convertidos de la Actividad 6.
-  * `videojuegos_aleatorio.dat`: Fichero binario de registros de 76 bytes de la Actividad 7.
+  * Ficheros convertidos entre formatos.
+  * `videojuegos_aleatorio.dat`: Fichero binario de registros de 76 bytes de acceso aleatorio.
 
 ---
 
@@ -123,14 +121,14 @@ dependencies {
 ## 7. Instrucciones de Compilacion y Ejecucion
 
 ### Requisitos:
-* **JDK 21** o superior instalado y configurado.
+* **JDK 17** o superior instalado y configurado.
 * **Gradle Wrapper** (incluido en el repositorio).
 * **IntelliJ IDEA** (recomendado).
 
 ### Ejecucion desde IntelliJ IDEA:
 1. Abrir el proyecto en IntelliJ IDEA y permitir que Gradle sincronice las dependencias.
-2. Navegar a cualquier paquete (`actividad01` a `actividad07`).
-3. Abrir su archivo `Main.kt` respectivo y pulsar el boton verde **Run ▶️** situado al lado de `fun main()`.
+2. Abrir el archivo [Main.kt](file:///src/main/kotlin/Main.kt) en la raiz de `src/main/kotlin/`.
+3. Pulsar el boton verde **Run ▶️** situado al lado de `fun main()`.
 
 ### Ejecucion desde Terminal:
 ```bash

@@ -28,7 +28,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("actividad07.MainKt")
+    mainClass.set("MainKt")
     applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
 }
 
