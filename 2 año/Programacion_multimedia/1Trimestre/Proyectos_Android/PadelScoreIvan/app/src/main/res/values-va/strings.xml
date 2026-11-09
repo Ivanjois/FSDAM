@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PadelScoreIvan</string>
+    <string name="title_sets">SETS</string>
+    <string name="title_games">JOCS</string>
+    <string name="title_current_set">SET ACTUAL</string>
+    <string name="title_tiebreak">SET ACTUAL (TIE-BREAK)</string>
+    <string name="btn_point_a">PUNT EQUIP A</string>
+    <string name="btn_point_b">PUNT EQUIP B</string>
+    <string name="btn_reset">REINICIAR</string>
+    <string name="winner_message">¡GUANYADOR: %1$s!</string>
+    <string name="team_a">EQUIP A</string>
+    <string name="team_b">EQUIP B</string>
+</resources>

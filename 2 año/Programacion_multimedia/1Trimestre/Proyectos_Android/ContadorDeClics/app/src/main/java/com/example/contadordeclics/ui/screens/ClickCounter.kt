@@ -24,6 +24,13 @@ import androidx.compose.ui.unit.sp
 import com.example.contadordeclics.R
 import com.example.contadordeclics.ui.MyAppContent
 
+/**
+ * Actividad 0 - Contador de Clics (ClickCounter)
+ * Componente principal en Jetpack Compose que implementa el contador de clics y puntos,
+ * gestionando el estado con rememberSaveable y consumiendo recursos centralizados (strings, dimens).
+ *
+ * Alumno: Ivan
+ */
 @Composable
 fun ClickCounter(modifier: Modifier = Modifier) {
     var times by rememberSaveable { mutableIntStateOf(0) }
@@ -100,4 +107,3 @@ fun ContentPreview() {
         ClickCounter(modifier = Modifier.padding(innerPadding))
     }
 }
-

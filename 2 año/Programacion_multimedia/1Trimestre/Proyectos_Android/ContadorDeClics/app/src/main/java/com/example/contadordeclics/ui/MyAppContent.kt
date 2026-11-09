@@ -7,6 +7,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.contadordeclics.ui.theme.ContadorDeClicsTheme
 
+/**
+ * Contenedor estructural principal para la interfaz de la aplicación,
+ * aplicando el tema visual y el Scaffold base de Material Design.
+ *
+ * Alumno: Ivan
+ */
 @Composable
 fun MyAppContent(content: @Composable (PaddingValues) -> Unit) {
     ContadorDeClicsTheme {
