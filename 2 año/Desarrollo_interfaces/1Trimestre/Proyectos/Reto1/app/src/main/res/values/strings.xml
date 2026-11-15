@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Reto1</string>
+    <string name="titulo_componentes">Ejemplo de componentes Android</string>
+    <string name="componentes_mostrar_informacion">Componentes para mostrar información</string>
+    <string name="texto_textview_ejemplo">Este texto se muestra mediante un TextView</string>
+    <string name="cd_imagen_ejemplo">Imagen de ejemplo</string>
+    <string name="progreso_ejemplo">Progreso: 50%</string>
+    <string name="titulo_videoview">VideoView</string>
+    <string name="titulo_webview">WebView</string>
+    <string name="componentes_entrada_interaccion">Componentes de entrada e interacción</string>
+    <string name="hint_introduce_nombre">Introduce tu nombre</string>
+    <string name="selecciona_tecnologias">Selecciona tecnologías:</string>
+    <string name="tecnologia_android">Android</string>
+    <string name="tecnologia_react">React</string>
+    <string name="tecnologia_flutter">Flutter</string>
+    <string name="selecciona_modalidad">Selecciona una modalidad:</string>
+    <string name="modalidad_presencial">Presencial</string>
+    <string name="modalidad_online">Online</string>
+    <string name="modalidad_mixta">Mixta</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="selecciona_curso">Selecciona un curso:</string>
+    <string name="nivel_seleccionado_50">Nivel seleccionado: 50</string>
+    <string name="guardar_informacion">Guardar información</string>
+    <string name="resultado_inicial">Aquí aparecerá el resultado.</string>
 </resources>
