@@ -1,5 +1,8 @@
+<!-- strings.xml: aquí centralizamos todos los textos de la app para no escribirlos fijos en el XML y poder traducirla fácil -->
 <resources>
+    <!-- Nombre de la app que aparece en el móvil -->
     <string name="app_name">Reto1</string>
+    <!-- Textos de títulos, etiquetas, botones y pistas de los componentes de activity_main.xml -->
     <string name="titulo_componentes">Ejemplo de componentes Android</string>
     <string name="componentes_mostrar_informacion">Componentes para mostrar información</string>
     <string name="texto_textview_ejemplo">Este texto se muestra mediante un TextView</string>
@@ -22,4 +25,12 @@
     <string name="nivel_seleccionado_50">Nivel seleccionado: 50</string>
     <string name="guardar_informacion">Guardar información</string>
     <string name="resultado_inicial">Aquí aparecerá el resultado.</string>
+
+    <!-- Lista de opciones para mostrar en el desplegable (Spinner) solo con XML -->
+    <string-array name="lista_cursos">
+        <item>1.º DAM</item>
+        <item>2.º DAM</item>
+        <item>1.º DAW</item>
+        <item>2.º DAW</item>
+    </string-array>
 </resources>

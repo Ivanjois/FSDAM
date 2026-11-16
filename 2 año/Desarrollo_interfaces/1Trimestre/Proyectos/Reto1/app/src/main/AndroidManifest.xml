@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- AndroidManifest.xml: archivo de configuración principal de la app.
+     Declara los permisos que pide al sistema, el icono, el nombre, el tema y todas las pantallas (Activities). -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permiso obligatorio para que el WebView pueda conectarse a internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Configuración general de la aplicación (icono, título, soporte RTL y estilo) -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto1">
+        <!-- Declaración de la pantalla principal; el intent-filter MAIN/LAUNCHER indica que es la primera que se abre -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

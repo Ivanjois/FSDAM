@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ScrollView como raíz: permite hacer scroll vertical cuando no caben todos los componentes en pantalla -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- LinearLayout vertical con alto wrap_content para que crezca libremente dentro del ScrollView -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +15,7 @@
         android:padding="16dp"
         tools:ignore="WebViewLayout">
 
+<!-- Título principal: usa 'sp' para adaptarse al tamaño de letra del móvil (accesibilidad) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +23,7 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
+        <!-- Subtítulo de la primera sección; layout_marginTop en 'dp' para separarlo del título -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +31,7 @@
             android:text="@string/componentes_mostrar_informacion"
             android:textStyle="bold" />
 
+        <!-- TextView informativo: todos los textos están centralizados en res/values/strings.xml -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +39,7 @@
             android:text="@string/texto_textview_ejemplo"
             android:textSize="12sp" />
 
+        <!-- CardView de 100dp con radio 50dp (la mitad): recorta la imagen en círculo en cualquier versión de Android -->
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -42,6 +48,7 @@
             app:cardCornerRadius="50dp"
             app:cardElevation="0dp">
 
+            <!-- ImageView con contentDescription obligatorio para accesibilidad (TalkBack) -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -56,6 +63,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/progreso_ejemplo" />
 
+        <!-- ProgressBar con estilo horizontal para mostrar un porcentaje de carga (50 de 100) -->
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -71,6 +79,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/titulo_videoview" />
 
+        <!-- VideoView: contenedor para reproducir vídeo (solo visual en el Reto 1) -->
         <VideoView
             android:id="@+id/videoView"
             android:layout_width="120dp"
@@ -83,6 +92,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/titulo_webview" />
 
+        <!-- WebView: hueco donde MainActivity carga la web de developer.android.com -->
         <WebView
             android:id="@+id/webView"
             android:layout_width="match_parent"
@@ -90,6 +100,7 @@
             android:layout_marginTop="8dp"
             tools:ignore="WebViewLayout" />
 
+        <!-- Inicio de la segunda sección: controles con los que interactúa el usuario -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,6 +108,7 @@
             android:text="@string/componentes_entrada_interaccion"
             android:textStyle="bold" />
 
+        <!-- EditText: caja de texto con minHeight="48dp" (tamaño táctil mínimo accesible) -->
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
@@ -113,6 +125,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/selecciona_tecnologias" />
 
+        <!-- CheckBox: permiten marcar varias opciones independientes a la vez -->
         <CheckBox
             android:id="@+id/cbAndroid"
             android:layout_width="wrap_content"
@@ -137,6 +150,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/selecciona_modalidad" />
 
+        <!-- RadioGroup: agrupa RadioButtons para que solo se pueda elegir una opción excluyente -->
         <RadioGroup
             android:id="@+id/rgModalidad"
             android:layout_width="match_parent"
@@ -162,6 +176,7 @@
                 android:text="@string/modalidad_mixta" />
         </RadioGroup>
 
+        <!-- SwitchCompat: interruptor de encendido/apagado para activar o desactivar una opción -->
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchNotificaciones"
             android:layout_width="wrap_content"
@@ -176,11 +191,13 @@
             android:layout_marginTop="16dp"
             android:text="@string/selecciona_curso" />
 
+        <!-- Spinner: desplegable relleno desde strings.xml sin necesitar código Kotlin -->
         <Spinner
             android:id="@+id/spinnerCurso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:entries="@array/lista_cursos"
             android:minHeight="48dp" />
 
         <TextView
@@ -190,6 +207,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/nivel_seleccionado_50" />
 
+        <!-- SeekBar: barra deslizante para que el usuario elija un valor entre 0 y 100 -->
         <SeekBar
             android:id="@+id/seekNivel"
             android:layout_width="match_parent"
@@ -198,6 +216,7 @@
             android:max="100"
             android:progress="50" />
 
+        <!-- Botones principales de acción (el segundo replica la captura del Reto 1) -->
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
@@ -205,6 +224,14 @@
             android:layout_marginTop="16dp"
             android:text="@string/guardar_informacion" />
 
+        <Button
+            android:id="@+id/btnGuardar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/guardar_informacion" />
+
+        <!-- TextView inferior donde se mostrará el resumen al darle funcionalidad en el Reto 5 -->
         <TextView
             android:id="@+id/txtResultado"
             android:layout_width="match_parent"
