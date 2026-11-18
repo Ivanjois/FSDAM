@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Centralización de todos los textos de la app para facilitar mantenimiento y traducciones -->
+<resources>
+    <string name="app_name">Velada 2027</string>
+
+    <!-- Reto 7: HomeActivity (Velada de Ibai 2027) -->
+    <string name="home_badge_edicion">EDICIÓN VII · 2027</string>
+    <string name="home_titulo">La Velada del Año 2027</string>
+    <string name="home_subtitulo">El mayor evento de boxeo y espectáculo de Ibai Llanos regresa con combates históricos, música en directo y sorpresas inolvidables.</string>
+    <string name="home_info_evento">Verano 2027 · Estadio Santiago Bernabéu</string>
+    <string name="home_btn_principal">Reservar entradas</string>
+    <string name="home_btn_detalles">Ver cartelera y detalles (Reto 9)</string>
+    <string name="cd_imagen_velada">Ilustración de guantes de boxeo y corona dorada de La Velada de Ibai 2027</string>
+    <string name="toast_no_implementado">Todavía no está implementado</string>
+
+    <!-- Valores por defecto del componente reutilizable MyCard -->
+    <string name="my_card_titulo_defecto">Título</string>
+    <string name="my_card_subtitulo_defecto">Subtítulo</string>
+    <string name="my_card_descripcion_defecto">Descripción de la tarjeta</string>
+    <string name="my_card_boton_defecto">Ver más</string>
+    <string name="cd_my_card_imagen_defecto">Imagen ilustrativa de la tarjeta</string>
+
+    <!-- Reto 9: DetailActivity -->
+    <string name="detail_titulo">Cartelera y Detalles</string>
+    <string name="detail_subtitulo">Tarjetas configuradas de forma programática mediante el componente reutilizable MyCard.</string>
+    <string name="detail_btn_volver">Volver al inicio</string>
+
+    <string name="detail_card1_titulo">Combate Estelar</string>
+    <string name="detail_card1_subtitulo">Main Event · Peso Pesado</string>
+    <string name="detail_card1_descripcion">Cinco asaltos de máxima intensidad sobre el ring principal ante más de 80.000 espectadores y millones en directo.</string>
+    <string name="detail_card1_boton">Ver ficha del combate</string>
+    <string name="cd_detail_card1_imagen">Guantes de boxeo enfrentados del combate estelar</string>
+    <string name="detail_card1_toast">Combate estelar: ficha en preparación</string>
+
+    <string name="detail_card2_titulo">Artistas Invitados</string>
+    <string name="detail_card2_subtitulo">Escenario Principal · En Directo</string>
+    <string name="detail_card2_descripcion">Actuaciones internacionales entre combates con producción audiovisual de gran formato y sonido envolvente.</string>
+    <string name="detail_card2_boton">Descubrir cartel musical</string>
+    <string name="cd_detail_card2_imagen">Nota musical representativa de los conciertos en directo</string>
+    <string name="detail_card2_toast">Cartel musical: próximos anuncios muy pronto</string>
+
+    <string name="detail_card3_titulo">Entradas y Accesos</string>
+    <string name="detail_card3_subtitulo">Grada, Pista y Zona VIP</string>
+    <string name="detail_card3_descripcion">Consulta las zonas disponibles, horarios de apertura de puertas y rutas de acceso adaptado al recinto.</string>
+    <string name="detail_card3_boton">Consultar disponibilidad</string>
+    <string name="cd_detail_card3_imagen">Entrada VIP con estrella para el acceso al evento</string>
+    <string name="detail_card3_toast">Entradas disponibles próximamente</string>
+</resources>

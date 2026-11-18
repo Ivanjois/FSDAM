@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Guante de boxeo estilizado -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M10,20 C10,12 16,8 25,8 C33,8 38,13 38,20 L38,28 C38,32 35,34 31,34 L17,34 C13,34 10,31 10,27 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M14,34 L34,34 L34,40 L14,40 Z" />
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M16,15 C19,13 24,13 27,15"
+        android:strokeColor="#F8FAFC"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
+
+</vector>

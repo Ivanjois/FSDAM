@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base claro de la aplicación -->
+    <style name="Base.Theme.RA5GenerarInformes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personaliza aquí los colores del tema claro si es necesario -->
+    </style>
+
+    <style name="Theme.RA5GenerarInformes" parent="Base.Theme.RA5GenerarInformes" />
+</resources>

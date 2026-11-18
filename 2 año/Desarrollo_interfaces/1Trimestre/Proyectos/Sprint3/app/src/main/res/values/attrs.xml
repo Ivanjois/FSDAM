@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Atributos XML personalizados para configurar MyCard desde layout o estilo -->
+    <declare-styleable name="MyCard">
+        <attr name="myCardTitulo" format="string" />
+        <attr name="myCardSubtitulo" format="string" />
+        <attr name="myCardDescripcion" format="string" />
+        <attr name="myCardImagen" format="reference" />
+        <attr name="myCardImagenContentDescription" format="string" />
+        <attr name="myCardTextoBoton" format="string" />
+        <attr name="myCardMostrarBoton" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeRootScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_pantalla"
+    android:fillViewport="true"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/homeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Tarjeta principal con shape personalizado para agrupar visualmente la información (Proximidad) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_velada_card"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Etiqueta de edición con shape tipo pill -->
+            <TextView
+                android:id="@+id/txtBadgeEdicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_evento"
+                android:letterSpacing="0.08"
+                android:text="@string/home_badge_edicion"
+                android:textColor="@color/texto_acento"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Imagen temática principal con marco personalizado y descripción accesible -->
+            <ImageView
+                android:id="@+id/imgVelada"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_imagen_marco"
+                android:contentDescription="@string/cd_imagen_velada"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_velada_2027" />
+
+            <!-- Título principal marcado como encabezado de accesibilidad para lectores de pantalla -->
+            <TextView
+                android:id="@+id/txtTituloVelada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:accessibilityHeading="true"
+                android:gravity="center"
+                android:text="@string/home_titulo"
+                android:textColor="@color/texto_principal"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Subtítulo descriptivo con alto contraste y altura flexible para fuentes grandes -->
+            <TextView
+                android:id="@+id/txtSubtituloVelada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/home_subtitulo"
+                android:textColor="@color/texto_secundario"
+                android:textSize="16sp" />
+
+            <!-- Dato clave de fecha y sede -->
+            <TextView
+                android:id="@+id/txtInfoEvento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+                android:text="@string/home_info_evento"
+                android:textColor="@color/texto_acento"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Botón principal personalizado con shape y área táctil >= 48dp -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEntradas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_boton_principal"
+                android:minHeight="52dp"
+                android:text="@string/home_btn_principal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <!-- Botón secundario para navegar a DetailActivity (Reto 9) -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnVerDetalles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_boton_secundario"
+                android:minHeight="48dp"
+                android:text="@string/home_btn_detalles"
+                android:textAllCaps="false"
+                android:textColor="@color/texto_principal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

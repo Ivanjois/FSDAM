@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta principal de La Velada 2027 (alto contraste WCAG AA/AAA) -->
+    <color name="bg_pantalla">#0F172A</color>
+    <color name="bg_superficie">#1E293B</color>
+    <color name="bg_superficie_elevada">#273549</color>
+    <color name="borde_tarjeta">#334155</color>
+    <color name="borde_dorado">#F59E0B</color>
+
+    <!-- Colores de texto con contraste verificado sobre fondos oscuros -->
+    <color name="texto_principal">#F8FAFC</color>
+    <color name="texto_secundario">#CBD5E1</color>
+    <color name="texto_acento">#FBBF24</color>
+
+    <!-- Colores de acción principal (contraste >= 5:1 con texto blanco) -->
+    <color name="btn_primario_inicio">#991B1B</color>
+    <color name="btn_primario_fin">#B45309</color>
+</resources>

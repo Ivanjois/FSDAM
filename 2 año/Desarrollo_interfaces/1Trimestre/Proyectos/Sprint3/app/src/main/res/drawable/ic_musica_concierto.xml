@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Nota musical doble -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M18,10 L38,7 L38,31 C38,34.5 35,37 31.5,37 C28,37 25.5,34.5 25.5,31.5 C25.5,28.5 28,26 31.5,26 C32.8,26 34,26.3 35,27 L35,14 L21,16.2 L21,34 C21,37.5 18,40 14.5,40 C11,40 8.5,37.5 8.5,34.5 C8.5,31.5 11,29 14.5,29 C15.8,29 17,29.3 18,30 Z" />
+
+</vector>

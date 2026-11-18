@@ -1,0 +1,4 @@
+<!-- Cadenas de texto generales de la aplicación -->
+<resources>
+    <string name="app_name">RA5GenerarInformes</string>
+</resources>
