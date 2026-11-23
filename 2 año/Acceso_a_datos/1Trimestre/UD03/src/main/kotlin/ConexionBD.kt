@@ -1,36 +1,54 @@
-// Fichero: ConexionBD.kt
-import java.io.File
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
 
+/**
+ * Gestor Singleton de la conexión JDBC contra PostgreSQL.
+ */
 object ConexionBD {
-    private val dbPath = "datos/videojuegos.sqlite" // Modificar según tu fichero
-    private val dbFile = File(dbPath)
-    private val url = "jdbc:sqlite:${dbFile.absolutePath}"
+    private const val HOST = "localhost"
+    private const val PORT = 5432
+    private const val DATABASE = "videojuegos"
+    private const val USER = "postgres"
 
+    // Contraseña local en Windows ("qwerty2"). En el equipo de clase es "admin" si no se unifica.
+    private const val PASSWORD = "qwerty2"
+
+    private val url = "jdbc:postgresql://$HOST:$PORT/$DATABASE"
+
+    /**
+     * Abre y devuelve una nueva conexión activa a PostgreSQL, o null si ocurre un error.
+     */
     fun getConnection(): Connection? {
         return try {
-            DriverManager.getConnection(url)
+            DriverManager.getConnection(url, USER, PASSWORD)
         } catch (e: SQLException) {
-            println("Error al conectar con la base de datos: ${e.message}")
+            println("Error al conectar con PostgreSQL ($url): ${e.message}")
             null
         }
     }
 
-    // Función de prueba: verificar conexión
+    /**
+     * Comprueba que la conexión contra la base de datos funciona correctamente.
+     */
     fun testConnection(): Boolean {
-        return getConnection()?.use { conn ->
-            println("Conexión establecida con éxito a ${dbFile.absolutePath}")
-            true
-        } ?: false
+        return try {
+            getConnection()?.use {
+                println("Conexión establecida con éxito con PostgreSQL ($DATABASE en $HOST:$PORT).")
+                true
+            } ?: false
+        } catch (e: SQLException) {
+            println("Error durante la prueba de conexión: ${e.message}")
+            false
+        }
     }
 
-    // Cerrar conexión (para los casos en los que no se utiliza .use)
+    /**
+     * Cierra manualmente una conexión cuando no se emplea un bloque .use {}.
+     */
     fun closeConnection(conn: Connection?) {
         try {
             conn?.close()
-            println("Conexión cerrada correctamente.")
         } catch (e: SQLException) {
             println("Error al cerrar la conexión: ${e.message}")
         }

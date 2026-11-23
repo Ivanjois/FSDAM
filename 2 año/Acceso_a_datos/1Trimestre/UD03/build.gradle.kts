@@ -11,7 +11,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.xerial:sqlite-jdbc:3.47.2.0")
+    // Dependencia anterior de SQLite (conservada comentada como referencia de la migración)
+    // implementation("org.xerial:sqlite-jdbc:3.47.2.0")
+    implementation("org.postgresql:postgresql:42.7.4")
     testImplementation(kotlin("test"))
 }
 
@@ -28,4 +30,5 @@ tasks.test {
 }
 tasks.withType<JavaExec> {
     jvmArgs("--enable-native-access=ALL-UNNAMED")
+    standardInput = System.`in`
 }
